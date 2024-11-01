@@ -7,11 +7,14 @@ import "./style.scss";
 const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
-  const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    new Date(evtA.date) > new Date(evtB.date) ? -1 : 1
+  const byDateDesc = data?.focus.sort(
+    (evtA, evtB) => (new Date(evtA.date) > new Date(evtB.date) ? -1 : 1)
+    // ancien code = < new Date(evtA.date) > new Date(evtB.date)
+    // Correction pour afficher du plus récent au plus ancien
   );
   const nextCard = () => {
     setTimeout(
+      // Correction pour que le slider affiche la première image une fois arrivé à la dernière sans afficher de page blanche entre les 2
       () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
       5000
     );
@@ -41,12 +44,13 @@ const Slider = () => {
           </div>
           <div className="SlideCard__paginationContainer">
             <div className="SlideCard__pagination">
-              {byDateDesc.map((_, radioIdx) => (
+              {byDateDesc.map((eventFocus, radioIdx) => (
                 <input
-                  key={event.id}
+                  key={eventFocus.date}
                   type="radio"
                   name="radio-button"
                   checked={index === radioIdx}
+                  // checked={idx === radioIdx} correction idx => index
                   readOnly
                 />
               ))}
