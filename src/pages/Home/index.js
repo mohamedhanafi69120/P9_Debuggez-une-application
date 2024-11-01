@@ -24,7 +24,6 @@ const Page = () => {
         <section className="SliderContainer">
           <Slider />
         </section>
-        {/* Ajout de l'id - Les Ancres*/}
 
         {/* Section Nos services - Ajout de l'id */}
 
