@@ -13,7 +13,9 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
+  // Utilisation du contexte Data pour récupérer les données
   const { data } = useData();
+  // Récupération du dernier événement pour l'afficher dans le footer
   const last = data ? data.events[data.events.length - 1] : undefined;
   return (
     <>
