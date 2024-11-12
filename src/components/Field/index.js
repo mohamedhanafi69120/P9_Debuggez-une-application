@@ -18,11 +18,11 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder }) => {
           placeholder={placeholder}
           data-testid="field-testid"
           required
-        />
+        /> // Attribut 'required' pour obliger l'utilisateur à remplir le champ
       );
       break;
     case FIELD_TYPES.TEXTAREA:
-      component = <textarea name={name} data-testid="field-testid" required />;
+      component = <textarea name={name} data-testid="field-testid" required />; // Attribut 'required' pour obliger l'utilisateur à remplir le champ
       break;
     default:
       component = (
@@ -32,7 +32,7 @@ const Field = ({ type = FIELD_TYPES.INPUT_TEXT, label, name, placeholder }) => {
           placeholder={placeholder}
           data-testid="field-testid"
           required
-        />
+        /> // Attribut 'required' pour obliger l'utilisateur à remplir le champ
       );
   }
   return (
