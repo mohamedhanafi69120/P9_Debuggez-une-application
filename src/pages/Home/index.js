@@ -26,7 +26,7 @@ const Page = () => {
           <Slider />
         </section>
 
-        {/* Section Nos services - Ajout de l'id */}
+        {/* Sections Nos services - Ajout de l'id */}
         <section className="ServicesContainer" id="nos-services">
           <h2 className="Title">Nos services</h2>
           <p>Nous organisons des événements sur mesure partout dans le monde</p>
